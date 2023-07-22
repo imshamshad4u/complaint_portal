@@ -39,21 +39,21 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'complaint_portal_app',
-    'social_django',
+    # 'social_django',
     # 'import_export',
     # 'social.apps.django_app.default',
 ]
 API_KEY="d3d15e90-223a-11ee-addf-0200cd936042"
-SOCIALACCOUNT_PROVIDERS = {
-    'google': {
-        'scope': [
-            'profile',
-            'email,'
-        ],
-        'AUTH_PARAMS': {'access-type': 'online'}
+# SOCIALACCOUNT_PROVIDERS = {
+#     'google': {
+#         'scope': [
+#             'profile',
+#             'email,'
+#         ],
+#         'AUTH_PARAMS': {'access-type': 'online'}
 
-    }
-}
+#     }
+# }
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -62,7 +62,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'social_django.middleware.SocialAuthExceptionMiddleware',
+    # 'social_django.middleware.SocialAuthExceptionMiddleware',
     #  'social_django.middleware.SocialAuthExceptionMiddleware'
 
 ]
@@ -72,8 +72,8 @@ ROOT_URLCONF = 'complaint_portal.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        # 'DIRS': [BASE_DIR/'templates'],
-        'DIRS': [],
+        'DIRS': [BASE_DIR/'templates'],
+        # 'DIRS': [],
 
         'APP_DIRS': True,
         'OPTIONS': {
@@ -105,22 +105,7 @@ DATABASES = {
     }
 }
 
-LOGGING = {
-    'version': 1,
-    'disable_existing_loggers': False,
-    'handlers': {
-        'console': {
-            'class': 'logging.StreamHandler',
-            'stream': sys.stdout,
-        },
-    },
-    'loggers': {
-        'django': {
-            'handlers': ['console'],
-            'level': 'INFO',
-        },
-    },
-}
+
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
 
